@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangerMan", "HangerMan\HangerMan.csproj", "{8BBAA7F6-8261-43D8-A0B4-E281EBA057AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangerManTest", "HangerManTest\HangerManTest.csproj", "{DC807812-0137-406E-9A8B-5EDABF01AD69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BBAA7F6-8261-43D8-A0B4-E281EBA057AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BBAA7F6-8261-43D8-A0B4-E281EBA057AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BBAA7F6-8261-43D8-A0B4-E281EBA057AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BBAA7F6-8261-43D8-A0B4-E281EBA057AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC807812-0137-406E-9A8B-5EDABF01AD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC807812-0137-406E-9A8B-5EDABF01AD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC807812-0137-406E-9A8B-5EDABF01AD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC807812-0137-406E-9A8B-5EDABF01AD69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
