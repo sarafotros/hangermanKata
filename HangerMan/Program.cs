@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace HangerMan
@@ -7,16 +8,26 @@ namespace HangerMan
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hangreman Game");
+            Console.WriteLine("Hangman Game");
             Console.WriteLine("Choose a word to run the game:");
             var secretWord = Console.ReadLine();
             var hangerGame = new HangerManGame(secretWord);
             
             Console.WriteLine("word length: "+ hangerGame.GetWordLength());
             var builder = new StringBuilder();
-            Console.WriteLine(builder.Append('_', hangerGame.GetWordLength()));
-            
+            Console.WriteLine(builder.Append('-', hangerGame.GetWordLength()));
+            Console.WriteLine("Type your first guess");
+            var guess = Console.ReadKey();
+            hangerGame.Guess(guess.KeyChar);
 
+            var incorrectGuesses = string.Join(",", hangerGame.IncorrectGuesses());
+            
+            Console.WriteLine(incorrectGuesses);
+            
         }
+        
+        
+       
     }
+    
 }

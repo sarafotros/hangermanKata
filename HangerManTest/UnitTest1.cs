@@ -28,18 +28,50 @@ namespace HangerManTest
         public void ReturnsTrueIfContainsTheLetter()
         {
             var hangerManGame = new HangerManGame("cat");
-            var isContain = hangerManGame.ContainsTheChar('c');
+            var contains = hangerManGame.Guess('c');
             
-            Assert.True(isContain);
+            Assert.True(contains);
         }
+        [Fact]
+        public void ReturnsFalseIfTheWordDoesNotContainTheGuessedLetter()
+        {
+            var hangerManGame = new HangerManGame("cat");
+            var contains = hangerManGame.Guess('y');
+            
+            Assert.False(contains);
+        }
+        
 
         [Fact]
         public void ReturnsTrueIfContainsTheLetter2()
         {
             var hangerManGame = new HangerManGame("cat");
-            var isContain = hangerManGame.ContainsTheChar('a');
+            var contains = hangerManGame.Guess('a');
             
-            Assert.True(isContain);
+            Assert.True(contains);
+        }
+        
+        [Fact]
+        public void IfGuessIsIncorrect_AddLetterToIncorrectGuessList()
+        {
+            var hangerManGame = new HangerManGame("cat");
+            
+            hangerManGame.Guess('y');
+
+            var result = hangerManGame.IncorrectGuesses();
+            
+            Assert.Contains('y', result);
+        }
+        [Fact]
+        public void IfGuessIsCorrect_DoNotAddLetterToIncorrectGuessList()
+        {
+            var hangerManGame = new HangerManGame("cat");
+            
+            hangerManGame.Guess('a');
+
+            var result = hangerManGame.IncorrectGuesses();
+            
+            Assert.DoesNotContain('a', result);
         }
     }
 }
