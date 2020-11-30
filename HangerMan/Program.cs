@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace HangerMan
 {
@@ -12,7 +13,10 @@ namespace HangerMan
             var hangerGame = new HangerManGame(secretWord);
             
             Console.WriteLine("word length: "+ hangerGame.GetWordLength());
+            var builder = new StringBuilder();
+            Console.WriteLine(builder.Append('_', hangerGame.GetWordLength()));
             
+
         }
     }
 }

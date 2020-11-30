@@ -9,11 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3d587a-cbb3-4707-93fe-d52b8e0442fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HangerMan.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HangerMan/HangerMan.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HangerMan/HangerManGame.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HangerMan/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HangerMan/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerMan/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +23,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HangerMan/Program.cs" />
         <option value="$PROJECT_DIR$/HangerMan/HangerManGame.cs" />
         <option value="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" />
+        <option value="$PROJECT_DIR$/HangerMan/Program.cs" />
       </list>
     </option>
   </component>
@@ -44,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -75,14 +73,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606136836425</updated>
-      <workItem from="1606136856676" duration="3241000" />
+      <workItem from="1606136856676" duration="4089000" />
+      <workItem from="1606493125171" duration="858000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -94,6 +93,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
