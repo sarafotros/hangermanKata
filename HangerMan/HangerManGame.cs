@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace HangerMan
@@ -17,7 +18,7 @@ namespace HangerMan
             return _word.Length;
         }
 
-        public bool Guess(char guessedChar)
+        public GuessResult Guess(char guessedChar)
         {
             // guessedChar = "cat"
             foreach (var character in _word)
@@ -27,15 +28,38 @@ namespace HangerMan
                 // 3. character = t
                 
                 bool doTheyMatch = character == guessedChar;
-                if (doTheyMatch) return true;
+                if (doTheyMatch) return GuessResult.CorrectGuess;
             }
-            _incorrectGuesses.Add(guessedChar);
-            return false;
+
+            if (!_incorrectGuesses.Contains(guessedChar))
+            {
+                _incorrectGuesses.Add(guessedChar);
+                return GuessResult.IncorrectGuess;
+            }
+            return GuessResult.RepeatedGuess;
         }
 
         public List<char> IncorrectGuesses()
         {
             return _incorrectGuesses;
         }
+
+        public GameStatus Status()
+        {
+            return _incorrectGuesses.Count < 11 ? GameStatus.InProgress : GameStatus.GameOver;
+        }
+        
+    }
+
+    public enum GameStatus
+    {
+        InProgress,
+        GameOver,
+    }
+    public enum GuessResult
+    {
+        CorrectGuess,
+        IncorrectGuess,
+        RepeatedGuess
     }
 }
