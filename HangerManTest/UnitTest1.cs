@@ -97,11 +97,63 @@ namespace HangerManTest
         [Fact]
         public void IfGuessIncorrectGuessIsRepeated_DoNotAddToIncorrectGuess()
         {
-            _hangerManGame.Guess('z');
-            _hangerManGame.Guess('z');
+            var firstGuess = _hangerManGame.Guess('z');
+            Assert.Equal(firstGuess,GuessResult.IncorrectGuess);
+            
+            var repeatedGuess = _hangerManGame.Guess('z');
+            Assert.Equal(repeatedGuess,GuessResult.RepeatedGuess);
+            
             var incorrect = _hangerManGame.IncorrectGuesses();
             Assert.Equal(1, incorrect.Count);  
-            Assert.Contains('z', incorrect);  
+            Assert.Contains('z', incorrect);
+        }
+
+        [Fact]
+        public void IfGuessCorrect_ReturnCorrectGuess()
+        {
+            var correctGuess = _hangerManGame.Guess('c');
+            Assert.Equal(correctGuess, GuessResult.CorrectGuess);
+        }
+
+        [Fact]
+        public void IfNoGuess_RevealedGuessShouldBeAllUnderScore()
+        {
+            var revealedWord = _hangerManGame.RevealedGuess();
+            Assert.Equal("___", revealedWord);
+        }
+        
+        [Fact]
+        public void IfGuessIsCorrect_RevealedGuessShouldRevealCorrectLetters()
+        {
+            _hangerManGame.Guess('c');
+            var correctGuesse = _hangerManGame.CorrectGuesses();
+            Assert.Contains('c', correctGuesse);
+            
+            var revealedWord = _hangerManGame.RevealedGuess();
+            Assert.Equal("c__", revealedWord);
+        }
+        
+        [Fact]
+        public void IfGuessesIsCorrect_RevealedGuessShouldRevealCorrectLetters()
+        {
+            _hangerManGame.Guess('c');
+            _hangerManGame.Guess('a');
+            var correctGuesses = _hangerManGame.CorrectGuesses();
+            Assert.Contains('c', correctGuesses);
+            Assert.Contains('a', correctGuesses);
+            
+            var revealedWord = _hangerManGame.RevealedGuess();
+            Assert.Equal("ca_", revealedWord);
+        }
+        
+        [Fact]
+        public void IfWordIsGuessed_GameStatusIsWon()
+        {
+            _hangerManGame.Guess('c');
+            _hangerManGame.Guess('a');
+            _hangerManGame.Guess('t');
+
+            Assert.Equal(_hangerManGame.Status(), GameStatus.Won);
         }
     }
 }

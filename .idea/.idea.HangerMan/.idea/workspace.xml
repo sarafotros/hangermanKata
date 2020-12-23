@@ -9,10 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3d587a-cbb3-4707-93fe-d52b8e0442fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HangerMan.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HangerMan.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangerMan/HangerManGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerMan/HangerManGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangerMan/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerMan/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" afterDir="false" />
@@ -26,19 +25,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/HangerManTest/EmptyClass.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HangerManTest/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HangerMan/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HangerMan/HangerManGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HangerManTest/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HangerManTest/EmptyClass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/HangerMan/Program.cs" />
-        <option value="$PROJECT_DIR$/HangerMan/HangerManGame.cs" />
-        <option value="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/HangerMan/Program.cs" />
+      <option value="$PROJECT_DIR$/HangerMan/HangerManGame.cs" />
+      <option value="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1kgz53qsjHr1OCXsMQEARGkevrq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -92,7 +89,9 @@
       <updated>1606136836425</updated>
       <workItem from="1606136856676" duration="3241000" />
       <workItem from="1606749359403" duration="3857000" />
-      <workItem from="1607959943998" duration="3624000" />
+      <workItem from="1607959943998" duration="4016000" />
+      <workItem from="1608553381919" duration="26000" />
+      <workItem from="1608563616377" duration="4969000" />
     </task>
     <servers />
   </component>
@@ -115,47 +114,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1755" height="218" key="GridCell.Tab.0.bottom" timestamp="1607962895032">
-      <screen x="-224" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1864" height="291" key="GridCell.Tab.0.bottom/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606139219737" />
-    <state width="1384" height="211" key="GridCell.Tab.0.bottom/0.23.1440.808/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607353205911" />
-    <state width="1755" height="218" key="GridCell.Tab.0.bottom/0.23.1440.814/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607962895032" />
-    <state width="1878" height="265" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-88.1920.983@1440.-88.1920.983" timestamp="1606752485971" />
-    <state width="1755" height="218" key="GridCell.Tab.0.center" timestamp="1607962895030">
-      <screen x="-224" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1864" height="291" key="GridCell.Tab.0.center/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606139219736" />
-    <state width="1384" height="211" key="GridCell.Tab.0.center/0.23.1440.808/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607353205911" />
-    <state width="1755" height="218" key="GridCell.Tab.0.center/0.23.1440.814/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607962895030" />
-    <state width="1878" height="265" key="GridCell.Tab.0.center/0.23.1440.877/1440.-88.1920.983@1440.-88.1920.983" timestamp="1606752485969" />
-    <state width="1755" height="218" key="GridCell.Tab.0.left" timestamp="1607962895029">
-      <screen x="-224" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1864" height="291" key="GridCell.Tab.0.left/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606139219735" />
-    <state width="1384" height="211" key="GridCell.Tab.0.left/0.23.1440.808/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607353205910" />
-    <state width="1755" height="218" key="GridCell.Tab.0.left/0.23.1440.814/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607962895029" />
-    <state width="1878" height="265" key="GridCell.Tab.0.left/0.23.1440.877/1440.-88.1920.983@1440.-88.1920.983" timestamp="1606752485967" />
-    <state width="1755" height="218" key="GridCell.Tab.0.right" timestamp="1607962895031">
-      <screen x="-224" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1864" height="291" key="GridCell.Tab.0.right/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606139219737" />
-    <state width="1384" height="211" key="GridCell.Tab.0.right/0.23.1440.808/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607353205911" />
-    <state width="1755" height="218" key="GridCell.Tab.0.right/0.23.1440.814/-224.-1057.1920.1057@-224.-1057.1920.1057" timestamp="1607962895031" />
-    <state width="1878" height="265" key="GridCell.Tab.0.right/0.23.1440.877/1440.-88.1920.983@1440.-88.1920.983" timestamp="1606752485970" />
-    <state x="236" y="-864" key="Rider.ProjectTemplateDialog.Size" timestamp="1606136967614">
-      <screen x="-224" y="-1080" width="1920" height="1080" />
-    </state>
-    <state x="236" y="-864" key="Rider.ProjectTemplateDialog.Size/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606136967614" />
-    <state x="458" y="-876" key="RollbackChangesDialog" timestamp="1606137786119">
-      <screen x="-224" y="-1080" width="1920" height="1080" />
-    </state>
-    <state x="458" y="-876" key="RollbackChangesDialog/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606137786119" />
-    <state x="315" y="-1035" width="840" height="1034" key="search.everywhere.popup" timestamp="1606137573002">
-      <screen x="-224" y="-1080" width="1920" height="1080" />
-    </state>
-    <state x="315" y="-1035" width="840" height="1034" key="search.everywhere.popup/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1606137573002" />
   </component>
 </project>

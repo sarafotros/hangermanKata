@@ -15,15 +15,20 @@ namespace HangerMan
             var hangerGame = new HangerManGame(secretWord);
             
             Console.WriteLine("word length: "+ hangerGame.GetWordLength());
-            var builder = new StringBuilder();
-            Console.WriteLine(builder.Append('-', hangerGame.GetWordLength()));
+            Console.WriteLine(hangerGame.RevealedGuess());
             Console.WriteLine("Type your guess");
             while (hangerGame.Status() == GameStatus.InProgress)
             {
                 var guess = Console.ReadKey();
-                hangerGame.Guess(guess.KeyChar);
-                var incorrectGuesses = string.Join(",", hangerGame.IncorrectGuesses());
-                Console.WriteLine($"\nincorrect guesses: {incorrectGuesses}");  
+                var result = hangerGame.Guess(guess.KeyChar);
+                
+                if (result == GuessResult.IncorrectGuess)
+                {
+                    var incorrectGuesses = string.Join(",", hangerGame.IncorrectGuesses());
+                    Console.WriteLine($"\nincorrect guesses: {incorrectGuesses}");
+                }
+               
+                Console.WriteLine( hangerGame.RevealedGuess());
             }
 
             Console.WriteLine("Game Over!");
