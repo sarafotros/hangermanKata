@@ -20,18 +20,26 @@ namespace HangerMan
             while (hangerGame.Status() == GameStatus.InProgress)
             {
                 var guess = Console.ReadKey();
+                Console.WriteLine();
                 var result = hangerGame.Guess(guess.KeyChar);
                 
                 if (result == GuessResult.IncorrectGuess)
                 {
                     var incorrectGuesses = string.Join(",", hangerGame.IncorrectGuesses());
-                    Console.WriteLine($"\nincorrect guesses: {incorrectGuesses}");
+                    Console.WriteLine($"lives remaining: {hangerGame.LivesRemaining()}");
+                    Console.WriteLine($"incorrect guesses: {incorrectGuesses}");
                 }
-               
-                Console.WriteLine( hangerGame.RevealedGuess());
+                Console.WriteLine($" current guess: {hangerGame.RevealedGuess()}");
             }
 
-            Console.WriteLine("Game Over!");
+            if (hangerGame.Status() == GameStatus.Won)
+            {
+                Console.WriteLine("Woohoo, you won!");
+            }
+            else
+            { 
+                Console.WriteLine("Game Over!"); 
+            }
             
         }
         

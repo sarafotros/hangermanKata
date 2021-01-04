@@ -6,9 +6,10 @@ namespace HangerMan
 {
     public class HangerManGame
     {
-        private string _word;
-        private List<char> _incorrectGuesses = new List<char>();
-        private List<char> _correctGuesses = new List<char>();
+        private const int Lives = 11;
+        private readonly string _word;
+        private readonly List<char> _incorrectGuesses = new List<char>();
+        private readonly List<char> _correctGuesses = new List<char>();
 
         public HangerManGame(string word)
         {
@@ -22,24 +23,29 @@ namespace HangerMan
 
         public GuessResult Guess(char guessedChar)
         {
+            var lowercaseGuessedChar = char.ToLowerInvariant(guessedChar);
+
             // guessedChar = "cat"
             foreach (var character in _word)
+
             {
+                var lowercaseCharacter = char.ToLowerInvariant(character);
                 // 1. character = c
                 // 2. character = a
                 // 3. character = t
-                
-                bool doTheyMatch = character == guessedChar;
-                if (doTheyMatch)
+
+                bool doTheyMatch = lowercaseCharacter == lowercaseGuessedChar;
+                if (doTheyMatch && !_correctGuesses.Contains(lowercaseGuessedChar))
                 {
-                    _correctGuesses.Add(guessedChar);
+                    _correctGuesses.Add(lowercaseGuessedChar);
                     return GuessResult.CorrectGuess;
                 }
             }
 
-            if (!_incorrectGuesses.Contains(guessedChar))
+            if (!_incorrectGuesses.Contains(lowercaseGuessedChar))
             {
-                _incorrectGuesses.Add(guessedChar);
+
+                _incorrectGuesses.Add(lowercaseGuessedChar);
                 return GuessResult.IncorrectGuess;
             }
             
@@ -58,20 +64,30 @@ namespace HangerMan
 
         public GameStatus Status()
         {
-            return _incorrectGuesses.Count < 11 ? GameStatus.InProgress : GameStatus.GameOver;
+            //issue because words with repeated characters 
+            if (_correctGuesses.Count == GetWordLength())
+            {
+                return GameStatus.Won;
+            }
+            return _incorrectGuesses.Count < Lives ? GameStatus.InProgress : GameStatus.GameOver;
         }
 
         public string RevealedGuess()
         {
             var builder = new StringBuilder();
 
-            foreach (var letter in _word)
+            foreach (var letter in _word.ToLower())
             {
                 builder.Append(_correctGuesses.Contains(letter) ? letter : '_');
             }
             return builder.ToString();
         }
-        
+
+        public int LivesRemaining()
+        {
+            
+            return Lives - _incorrectGuesses.Count;
+        }
     }
 
     public enum GameStatus
@@ -90,6 +106,6 @@ namespace HangerMan
 
 
 // Scores
-// How many lives left...
+// How many Lives left...
 // win message
 // test progress status

@@ -10,6 +10,7 @@ using Xunit;
 // 6. If the letter isn't in the word, the letter is added to a list of incorrect guesses and the player loses a life
 // 7. If all letters guessed correctly then player 2 wins
 // 8. If player loses all lives before word is guessed then player 1 wins
+// Alphanumeric characters 
 
 namespace HangerManTest
 {
@@ -43,7 +44,6 @@ namespace HangerManTest
             
             Assert.Equal(GuessResult.IncorrectGuess,contains);
         }
-        
 
         [Fact]
         public void ReturnsTrueIfContainsTheLetter2()
@@ -111,7 +111,7 @@ namespace HangerManTest
         [Fact]
         public void IfGuessCorrect_ReturnCorrectGuess()
         {
-            var correctGuess = _hangerManGame.Guess('c');
+            var correctGuess = _hangerManGame.Guess('C');
             Assert.Equal(correctGuess, GuessResult.CorrectGuess);
         }
 
@@ -153,7 +153,67 @@ namespace HangerManTest
             _hangerManGame.Guess('a');
             _hangerManGame.Guess('t');
 
-            Assert.Equal(_hangerManGame.Status(), GameStatus.Won);
+            Assert.Equal( GameStatus.Won, _hangerManGame.Status());
         }
+
+        [Fact]
+        public void IfWordIsNotGuessed_GameStatusIsInProgress()
+        {
+            _hangerManGame.Guess('c');
+            _hangerManGame.Guess('a');
+            _hangerManGame.Guess('a');
+
+            Assert.Equal(GameStatus.InProgress, _hangerManGame.Status());
+        }
+
+        [Fact]
+        public void IgnoreLetterCasingForCorrectGuesses()
+        {
+            _hangerManGame.Guess('C');
+            var correctGuesses = _hangerManGame.CorrectGuesses();
+
+            Assert.Contains('c', correctGuesses);
+        }
+
+        [Fact]
+        public void IgnoreLetterCasingForIncorrectGuesses()
+        {
+            _hangerManGame.Guess('D');
+            var incorrectGuesses = _hangerManGame.IncorrectGuesses();
+
+            Assert.Contains('d', incorrectGuesses);
+        }
+
+        [Fact]
+        public void IgnoreLetterCasingForTwoIncorrectGuesses()
+        {
+            _hangerManGame.Guess('D');
+            _hangerManGame.Guess('d');
+
+            var incorrectGuesses = _hangerManGame.IncorrectGuesses();
+
+            Assert.Contains('d', incorrectGuesses);
+            Assert.Equal(1, incorrectGuesses.Count);
+        }
+        [Fact]
+        public void LivesRemaining()
+        {
+            _hangerManGame.Guess('D');
+
+
+            Assert.Equal(10, _hangerManGame.LivesRemaining());
+        }
+
+        [Fact]
+        public void wordWithMultipleOfSameLetter()
+        {
+            var hangermanGame = new HangerManGame("book");
+            hangermanGame.Guess('b');
+            hangermanGame.Guess('o');
+            hangermanGame.Guess('k');
+
+            Assert.Equal(GameStatus.Won, hangermanGame.Status());
+        }
+
     }
 }
