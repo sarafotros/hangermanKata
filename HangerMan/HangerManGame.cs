@@ -11,9 +11,9 @@ namespace HangerMan
         private readonly List<char> _incorrectGuesses = new List<char>();
         private readonly List<char> _correctGuesses = new List<char>();
 
-        public HangerManGame(string word)
+        public HangerManGame(IWordProvider wordProvider)
         {
-            _word = word;
+            _word = wordProvider.Word;
         }
 
         public int GetWordLength()
@@ -21,35 +21,38 @@ namespace HangerMan
             return _word.Length;
         }
 
-        public GuessResult Guess(char guessedChar)
+        public Result GuessResult(char guessedChar)
         {
             var lowercaseGuessedChar = char.ToLowerInvariant(guessedChar);
 
-            // guessedChar = "cat"
-            foreach (var character in _word)
-
-            {
-                var lowercaseCharacter = char.ToLowerInvariant(character);
-                // 1. character = c
-                // 2. character = a
-                // 3. character = t
-
-                bool doTheyMatch = lowercaseCharacter == lowercaseGuessedChar;
-                if (doTheyMatch && !_correctGuesses.Contains(lowercaseGuessedChar))
-                {
-                    _correctGuesses.Add(lowercaseGuessedChar);
-                    return GuessResult.CorrectGuess;
-                }
-            }
+            if (IsCorrectGuess(lowercaseGuessedChar)) return Result.CorrectGuess;
 
             if (!_incorrectGuesses.Contains(lowercaseGuessedChar))
             {
-
                 _incorrectGuesses.Add(lowercaseGuessedChar);
-                return GuessResult.IncorrectGuess;
+                return Result.IncorrectGuess;
             }
             
-            return GuessResult.RepeatedGuess;
+            return Result.RepeatedGuess;
+        }
+
+        private bool IsCorrectGuess(char guessedChar)
+        {
+            foreach (var character in _word)
+            {
+                var lowercaseCharacter = char.ToLowerInvariant(character);
+                bool doTheyMatch = lowercaseCharacter == guessedChar;
+
+                if (doTheyMatch && !_correctGuesses.Contains(guessedChar))
+                {
+                    _correctGuesses.Add(guessedChar);
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public List<char> IncorrectGuesses()
@@ -64,12 +67,19 @@ namespace HangerMan
 
         public GameStatus Status()
         {
-            //issue because words with repeated characters 
-            if (_correctGuesses.Count == GetWordLength())
+            foreach (var character in _word)
             {
-                return GameStatus.Won;
+                if (!_correctGuesses.Contains(character))
+                {
+                    return HasLiveRemaining() ? GameStatus.InProgress : GameStatus.GameOver;
+                }
             }
-            return _incorrectGuesses.Count < Lives ? GameStatus.InProgress : GameStatus.GameOver;
+            return GameStatus.Won;
+        }
+
+        private bool HasLiveRemaining()
+        {
+            return _incorrectGuesses.Count < Lives;
         }
 
         public string RevealedGuess()
@@ -85,7 +95,6 @@ namespace HangerMan
 
         public int LivesRemaining()
         {
-            
             return Lives - _incorrectGuesses.Count;
         }
     }
@@ -96,7 +105,7 @@ namespace HangerMan
         GameOver,
         Won
     }
-    public enum GuessResult
+    public enum Result
     {
         CorrectGuess,
         IncorrectGuess,

@@ -21,15 +21,15 @@ namespace HangerMan
             {
                 var guess = Console.ReadKey();
                 Console.WriteLine();
-                var result = hangerGame.Guess(guess.KeyChar);
+                var result = hangerGame.GuessResult(guess.KeyChar);
                 
-                if (result == GuessResult.IncorrectGuess)
+                if (result == Result.IncorrectGuess)
                 {
                     var incorrectGuesses = string.Join(",", hangerGame.IncorrectGuesses());
                     Console.WriteLine($"lives remaining: {hangerGame.LivesRemaining()}");
                     Console.WriteLine($"incorrect guesses: {incorrectGuesses}");
                 }
-                Console.WriteLine($" current guess: {hangerGame.RevealedGuess()}");
+                Console.WriteLine($"current guess: {hangerGame.RevealedGuess()}");
             }
 
             if (hangerGame.Status() == GameStatus.Won)

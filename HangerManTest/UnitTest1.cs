@@ -18,8 +18,10 @@ namespace HangerManTest
     {
         private readonly HangerManGame _hangerManGame;
 
+        
         public UnitTest1()
         {
+            var wordProvider = new Mock<IWordProvider>();
             _hangerManGame = new HangerManGame("cat");
         }
         [Fact]
@@ -33,31 +35,31 @@ namespace HangerManTest
         [Fact]
         public void ReturnsTrueIfContainsTheLetter()
         {
-            var contains = _hangerManGame.Guess('c');
+            var contains = _hangerManGame.GuessResult('c');
 
-            Assert.Equal(GuessResult.CorrectGuess,contains);
+            Assert.Equal(Result.CorrectGuess,contains);
         }
         [Fact]
         public void ReturnsFalseIfTheWordDoesNotContainTheGuessedLetter()
         {
-            var contains = _hangerManGame.Guess('y');
+            var contains = _hangerManGame.GuessResult('y');
             
-            Assert.Equal(GuessResult.IncorrectGuess,contains);
+            Assert.Equal(Result.IncorrectGuess,contains);
         }
 
         [Fact]
         public void ReturnsTrueIfContainsTheLetter2()
         {
-            var contains = _hangerManGame.Guess('a');
+            var contains = _hangerManGame.GuessResult('a');
             
-            Assert.Equal(GuessResult.CorrectGuess,contains);
+            Assert.Equal(Result.CorrectGuess,contains);
         }
         
         [Fact]
         public void IfGuessIsIncorrect_AddLetterToIncorrectGuessList()
         {
             
-            _hangerManGame.Guess('y');
+            _hangerManGame.GuessResult('y');
 
             var result = _hangerManGame.IncorrectGuesses();
             
@@ -66,7 +68,7 @@ namespace HangerManTest
         [Fact]
         public void IfGuessIsCorrect_DoNotAddLetterToIncorrectGuessList()
         {
-            _hangerManGame.Guess('a');
+            _hangerManGame.GuessResult('a');
 
             var result = _hangerManGame.IncorrectGuesses();
             
@@ -76,19 +78,19 @@ namespace HangerManTest
         [Fact]
         public void IfNumberOfIncorrectGuessesIsEleven_ReturnGameOver()
         {
-            _hangerManGame.Guess('a');
-            _hangerManGame.Guess('e');
-            _hangerManGame.Guess('r');
-            _hangerManGame.Guess('t');
-            _hangerManGame.Guess('y');
-            _hangerManGame.Guess('u');
-            _hangerManGame.Guess('i');
-            _hangerManGame.Guess('o');
-            _hangerManGame.Guess('q');
-            _hangerManGame.Guess('d');
-            _hangerManGame.Guess('v');
-            _hangerManGame.Guess('x');
-            _hangerManGame.Guess('z');
+            _hangerManGame.GuessResult('a');
+            _hangerManGame.GuessResult('e');
+            _hangerManGame.GuessResult('r');
+            _hangerManGame.GuessResult('t');
+            _hangerManGame.GuessResult('y');
+            _hangerManGame.GuessResult('u');
+            _hangerManGame.GuessResult('i');
+            _hangerManGame.GuessResult('o');
+            _hangerManGame.GuessResult('q');
+            _hangerManGame.GuessResult('d');
+            _hangerManGame.GuessResult('v');
+            _hangerManGame.GuessResult('x');
+            _hangerManGame.GuessResult('z');
             
             var status = _hangerManGame.Status();
             Assert.Equal(GameStatus.GameOver, status);
@@ -97,11 +99,11 @@ namespace HangerManTest
         [Fact]
         public void IfGuessIncorrectGuessIsRepeated_DoNotAddToIncorrectGuess()
         {
-            var firstGuess = _hangerManGame.Guess('z');
-            Assert.Equal(firstGuess,GuessResult.IncorrectGuess);
+            var firstGuess = _hangerManGame.GuessResult('z');
+            Assert.Equal(firstGuess,Result.IncorrectGuess);
             
-            var repeatedGuess = _hangerManGame.Guess('z');
-            Assert.Equal(repeatedGuess,GuessResult.RepeatedGuess);
+            var repeatedGuess = _hangerManGame.GuessResult('z');
+            Assert.Equal(repeatedGuess,Result.RepeatedGuess);
             
             var incorrect = _hangerManGame.IncorrectGuesses();
             Assert.Equal(1, incorrect.Count);  
@@ -111,8 +113,8 @@ namespace HangerManTest
         [Fact]
         public void IfGuessCorrect_ReturnCorrectGuess()
         {
-            var correctGuess = _hangerManGame.Guess('C');
-            Assert.Equal(correctGuess, GuessResult.CorrectGuess);
+            var correctGuess = _hangerManGame.GuessResult('C');
+            Assert.Equal(correctGuess, Result.CorrectGuess);
         }
 
         [Fact]
@@ -125,7 +127,7 @@ namespace HangerManTest
         [Fact]
         public void IfGuessIsCorrect_RevealedGuessShouldRevealCorrectLetters()
         {
-            _hangerManGame.Guess('c');
+            _hangerManGame.GuessResult('c');
             var correctGuesse = _hangerManGame.CorrectGuesses();
             Assert.Contains('c', correctGuesse);
             
@@ -136,8 +138,8 @@ namespace HangerManTest
         [Fact]
         public void IfGuessesIsCorrect_RevealedGuessShouldRevealCorrectLetters()
         {
-            _hangerManGame.Guess('c');
-            _hangerManGame.Guess('a');
+            _hangerManGame.GuessResult('c');
+            _hangerManGame.GuessResult('a');
             var correctGuesses = _hangerManGame.CorrectGuesses();
             Assert.Contains('c', correctGuesses);
             Assert.Contains('a', correctGuesses);
@@ -149,9 +151,9 @@ namespace HangerManTest
         [Fact]
         public void IfWordIsGuessed_GameStatusIsWon()
         {
-            _hangerManGame.Guess('c');
-            _hangerManGame.Guess('a');
-            _hangerManGame.Guess('t');
+            _hangerManGame.GuessResult('c');
+            _hangerManGame.GuessResult('a');
+            _hangerManGame.GuessResult('t');
 
             Assert.Equal( GameStatus.Won, _hangerManGame.Status());
         }
@@ -159,9 +161,9 @@ namespace HangerManTest
         [Fact]
         public void IfWordIsNotGuessed_GameStatusIsInProgress()
         {
-            _hangerManGame.Guess('c');
-            _hangerManGame.Guess('a');
-            _hangerManGame.Guess('a');
+            _hangerManGame.GuessResult('c');
+            _hangerManGame.GuessResult('a');
+            _hangerManGame.GuessResult('a');
 
             Assert.Equal(GameStatus.InProgress, _hangerManGame.Status());
         }
@@ -169,7 +171,7 @@ namespace HangerManTest
         [Fact]
         public void IgnoreLetterCasingForCorrectGuesses()
         {
-            _hangerManGame.Guess('C');
+            _hangerManGame.GuessResult('C');
             var correctGuesses = _hangerManGame.CorrectGuesses();
 
             Assert.Contains('c', correctGuesses);
@@ -178,7 +180,7 @@ namespace HangerManTest
         [Fact]
         public void IgnoreLetterCasingForIncorrectGuesses()
         {
-            _hangerManGame.Guess('D');
+            _hangerManGame.GuessResult('D');
             var incorrectGuesses = _hangerManGame.IncorrectGuesses();
 
             Assert.Contains('d', incorrectGuesses);
@@ -187,8 +189,8 @@ namespace HangerManTest
         [Fact]
         public void IgnoreLetterCasingForTwoIncorrectGuesses()
         {
-            _hangerManGame.Guess('D');
-            _hangerManGame.Guess('d');
+            _hangerManGame.GuessResult('D');
+            _hangerManGame.GuessResult('d');
 
             var incorrectGuesses = _hangerManGame.IncorrectGuesses();
 
@@ -198,7 +200,7 @@ namespace HangerManTest
         [Fact]
         public void LivesRemaining()
         {
-            _hangerManGame.Guess('D');
+            _hangerManGame.GuessResult('D');
 
 
             Assert.Equal(10, _hangerManGame.LivesRemaining());
@@ -208,9 +210,9 @@ namespace HangerManTest
         public void wordWithMultipleOfSameLetter()
         {
             var hangermanGame = new HangerManGame("book");
-            hangermanGame.Guess('b');
-            hangermanGame.Guess('o');
-            hangermanGame.Guess('k');
+            hangermanGame.GuessResult('b');
+            hangermanGame.GuessResult('o');
+            hangermanGame.GuessResult('k');
 
             Assert.Equal(GameStatus.Won, hangermanGame.Status());
         }

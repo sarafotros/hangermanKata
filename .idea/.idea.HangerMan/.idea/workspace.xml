@@ -9,11 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3d587a-cbb3-4707-93fe-d52b8e0442fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HangerMan/IWordProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HangerMan/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangerMan/HangerManGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerMan/HangerManGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangerMan/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerMan/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HangerManTest/HangerManTest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HangerManTest/HangerManTest.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,17 +27,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/HangerManTest/EmptyClass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HangerManTest/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HangerMan/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HangerMan/HangerManGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HangerManTest/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HangerManTest/EmptyClass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/HangerMan/Program.cs" />
-      <option value="$PROJECT_DIR$/HangerMan/HangerManGame.cs" />
-      <option value="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/HangerMan/Program.cs" />
+        <option value="$PROJECT_DIR$/HangerMan/IWordProvie.cs" />
+        <option value="$PROJECT_DIR$/HangerMan/IWordProvider.cs" />
+        <option value="$PROJECT_DIR$/HangerMan/HangerManGame.cs" />
+        <option value="$PROJECT_DIR$/HangerManTest/UnitTest1.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1kgz53qsjHr1OCXsMQEARGkevrq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -91,7 +97,9 @@
       <workItem from="1606749359403" duration="3857000" />
       <workItem from="1607959943998" duration="4016000" />
       <workItem from="1608553381919" duration="26000" />
-      <workItem from="1608563616377" duration="4969000" />
+      <workItem from="1608563616377" duration="5033000" />
+      <workItem from="1609772600993" duration="1014000" />
+      <workItem from="1610378312979" duration="3332000" />
     </task>
     <servers />
   </component>
@@ -114,5 +122,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1864" height="196" key="GridCell.Tab.0.bottom" timestamp="1610381129871">
+      <screen x="-224" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1864" height="196" key="GridCell.Tab.0.bottom/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1610381129871" />
+    <state width="1864" height="196" key="GridCell.Tab.0.center" timestamp="1610381129869">
+      <screen x="-224" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1864" height="196" key="GridCell.Tab.0.center/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1610381129869" />
+    <state width="1864" height="196" key="GridCell.Tab.0.left" timestamp="1610381129868">
+      <screen x="-224" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1864" height="196" key="GridCell.Tab.0.left/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1610381129868" />
+    <state width="1864" height="196" key="GridCell.Tab.0.right" timestamp="1610381129870">
+      <screen x="-224" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1864" height="196" key="GridCell.Tab.0.right/0.0.1440.900/-224.-1080.1920.1080@-224.-1080.1920.1080" timestamp="1610381129870" />
   </component>
 </project>
