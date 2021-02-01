@@ -4,4 +4,14 @@ namespace HangerMan
     {
         string Word { get; }
     }
+
+    public class WordProvider : IWordProvider
+    {
+        public string Word { get; }
+
+        public WordProvider( string word)
+        {
+            Word = word;
+        }
+    }
 }

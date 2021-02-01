@@ -11,9 +11,10 @@ namespace HangerMan
             
             Console.WriteLine("Hangman Game");
             Console.WriteLine("Choose a word to run the game:");
-            var secretWord = Console.ReadLine();
-            var hangerGame = new HangerManGame(secretWord);
-            
+            string secretWord = Console.ReadLine();
+            var wordProvider = new WordProvider(secretWord);
+            var hangerGame = new HangerManGame(wordProvider);
+
             Console.WriteLine("word length: "+ hangerGame.GetWordLength());
             Console.WriteLine(hangerGame.RevealedGuess());
             Console.WriteLine("Type your guess");

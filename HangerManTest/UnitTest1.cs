@@ -1,5 +1,6 @@
 using System;
 using HangerMan;
+using Moq;
 using Xunit;
 
 // 1. secret word entered by Player 1
@@ -17,12 +18,14 @@ namespace HangerManTest
     public class UnitTest1
     {
         private readonly HangerManGame _hangerManGame;
+        private readonly Mock<IWordProvider> wordProvider;
 
         
         public UnitTest1()
         {
-            var wordProvider = new Mock<IWordProvider>();
-            _hangerManGame = new HangerManGame("cat");
+            wordProvider = new Mock<IWordProvider>();
+            wordProvider.Setup(x => x.Word).Returns("cat");
+            _hangerManGame = new HangerManGame(wordProvider.Object);
         }
         [Fact]
         public void ReturnsCorrectLength()
@@ -209,7 +212,8 @@ namespace HangerManTest
         [Fact]
         public void wordWithMultipleOfSameLetter()
         {
-            var hangermanGame = new HangerManGame("book");
+            wordProvider.Setup(x => x.Word).Returns("book");
+            var hangermanGame = new HangerManGame(wordProvider.Object);
             hangermanGame.GuessResult('b');
             hangermanGame.GuessResult('o');
             hangermanGame.GuessResult('k');
