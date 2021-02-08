@@ -3,7 +3,7 @@
     <Files>
       <File FileName="HangerMan/Program.cs" Line="1" Column="1" />
       <File FileName="HangerMan/HangerManGame.cs" />
-      <File FileName="HangerManTest/UnitTest1.cs" Line="1" Column="1" />
+      <File FileName="HangerManTest/UnitTest1.cs" Line="29" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Flurl.Http;
 
-namespace HangerMan.ApiWordProvider
+namespace HangerMan
 {
     public class ApiWordProvider : IWordProvider
     {
@@ -14,15 +14,23 @@ namespace HangerMan.ApiWordProvider
         {
             get
             {
-                var result = "http://newsapi.org/v2/everything?q=tesla&from=2021-01-01&sortBy=publishedAt&apiKey=acdb4d1d0609489ebb953aaf133d39fb"
+                var result = "http://newsapi.org/v2/everything?q=tesla&from=2021-02-08&sortBy=publishedAt&apiKey=acdb4d1d0609489ebb953aaf133d39fb"
                     .GetJsonAsync<NewsResponse>()
                     .GetAwaiter()
                     .GetResult();
 
                 Random r = new Random();
-                var randomArticle = r.Next(0, result.Articles.Count());
+                var randomIndex = r.Next(0, result.Articles.Count());
+               
+                var randomArticle = result.Articles[randomIndex];
 
-                return "";
+                var articleWordArray = randomArticle.Description.Split(' ');
+
+                var randomWordIndex = r.Next(0, articleWordArray.Length);
+
+                var randomWord = articleWordArray[randomWordIndex];
+
+                return randomWord;
             }
         }
     }

@@ -10,9 +10,24 @@ namespace HangerMan
         {
             
             Console.WriteLine("Hangman Game");
-            Console.WriteLine("Choose a word to run the game:");
-            string secretWord = Console.ReadLine();
-            var wordProvider = new WordProvider(secretWord);
+            Console.WriteLine("Would you like to choose your own word? (Y/N");
+            var chooseOwnWord = Console.ReadLine();
+
+            IWordProvider wordProvider; 
+
+            if (chooseOwnWord == "Y")
+            {            
+                Console.WriteLine("Choose a word to run the game:");
+                string secretWord = Console.ReadLine();
+
+                wordProvider = new WordProvider(secretWord);
+            }
+
+            else
+            {
+                wordProvider = new ApiWordProvider();
+            }
+
             var hangerGame = new HangerManGame(wordProvider);
 
             Console.WriteLine("word length: "+ hangerGame.GetWordLength());
