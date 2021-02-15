@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Flurl.Http;
-using HangerMan.ApiWordProvider;
+using HangerMan;
+
 
 namespace HangerManTest
 {

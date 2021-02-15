@@ -97,6 +97,11 @@ namespace HangerMan
         {
             return Lives - _incorrectGuesses.Count;
         }
+
+        public string SecretWord()
+        {
+           return _word;
+        }
     }
 
     public enum GameStatus

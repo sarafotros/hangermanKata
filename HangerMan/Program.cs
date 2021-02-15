@@ -10,7 +10,7 @@ namespace HangerMan
         {
             
             Console.WriteLine("Hangman Game");
-            Console.WriteLine("Would you like to choose your own word? (Y/N");
+            Console.WriteLine("Would you like to choose your own word? [Y/N]");
             var chooseOwnWord = Console.ReadLine();
 
             IWordProvider wordProvider; 
@@ -54,7 +54,8 @@ namespace HangerMan
             }
             else
             { 
-                Console.WriteLine("Game Over!"); 
+                Console.WriteLine("Game Over!");
+                Console.WriteLine($"The secret word was {hangerGame.SecretWord()}");
             }
             
         }

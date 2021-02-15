@@ -210,7 +210,7 @@ namespace HangerManTest
         }
 
         [Fact]
-        public void wordWithMultipleOfSameLetter()
+        public void WordWithMultipleOfSameLetter()
         {
             wordProvider.Setup(x => x.Word).Returns("book");
             var hangermanGame = new HangerManGame(wordProvider.Object);
@@ -221,6 +221,7 @@ namespace HangerManTest
             Assert.Equal(GameStatus.Won, hangermanGame.Status());
         }
 
+       
 
     }
 }
