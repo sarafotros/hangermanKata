@@ -25,9 +25,10 @@ namespace HangerMan
 
             else
             {
-                wordProvider = new ApiWordProvider();
+                wordProvider = new ApiWordProvider(new DateProvider());
             }
 
+            wordProvider = new RandomWordProvider();
             var hangerGame = new HangerManGame(wordProvider);
 
             Console.WriteLine("word length: "+ hangerGame.GetWordLength());

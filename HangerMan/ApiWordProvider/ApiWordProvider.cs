@@ -10,11 +10,16 @@ namespace HangerMan
 {
     public class ApiWordProvider : IWordProvider
     {
+        private readonly DateProvider _date;
+        public ApiWordProvider(DateProvider date)
+        {
+            _date = date; 
+        }
         public string Word
         {
             get
             {
-                var result = "http://newsapi.org/v2/everything?q=tesla&from=2021-02-08&sortBy=publishedAt&apiKey=acdb4d1d0609489ebb953aaf133d39fb"
+                var result = $"http://newsapi.org/v2/everything?q=tesla&from={_date.TodaysDate()}&sortBy=publishedAt&apiKey=acdb4d1d0609489ebb953aaf133d39fb"
                     .GetJsonAsync<NewsResponse>()
                     .GetAwaiter()
                     .GetResult();

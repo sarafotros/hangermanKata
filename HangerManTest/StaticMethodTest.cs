@@ -10,8 +10,8 @@ namespace HangerManTest
         public void ShouldReturnCurrentDate()
         {
           var dateProvider = new DateProvider();
-          var today =dateProvider.TodaysDate();
-          Assert.Equal(today, DateTime.Today.Date.ToString());
+            var today = dateProvider.TodaysDate();
+            Assert.Equal("2021-02-22", today );
 
         }
     }

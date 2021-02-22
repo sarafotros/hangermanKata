@@ -77,6 +77,11 @@ namespace HangerMan
             return GameStatus.Won;
         }
 
+        internal object SecretWord()
+        {
+            return 
+        }
+
         private bool HasLiveRemaining()
         {
             return _incorrectGuesses.Count < Lives;
@@ -96,11 +101,6 @@ namespace HangerMan
         public int LivesRemaining()
         {
             return Lives - _incorrectGuesses.Count;
-        }
-
-        public string SecretWord()
-        {
-           return _word;
         }
     }
 

@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-using Flurl.Http;
-using HangerMan;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using Xunit;
+//using Flurl.Http;
+//using HangerMan;
 
 
-namespace HangerManTest
-{
-   public class FlurlTest 
-    {
+//namespace HangerManTest
+//{
+//   public class FlurlTest 
+//    {
 
-        [Fact]
-        public void LookAtFlurl()
-        {
-            var wordProvider = new ApiWordProvider();
-            var result = wordProvider.Word;
-        }
-    }
-}
+//        [Fact]
+//        public void LookAtFlurl()
+//        {
+//            var wordProvider = new ApiWordProvider();
+//            var result = wordProvider.Word;
+//        }
+//    }
+//}

@@ -5,9 +5,7 @@ namespace HangerMan
 {
     public class DateProvider
     {
-        // 2021-02-08
-        // private readonly DateTime dateTime = DateTime.Now;
-
+       
         DateTime _localDate;
 
         public DateProvider()
@@ -19,7 +17,7 @@ namespace HangerMan
         public string TodaysDate()
         {
 
-            var date = _localDate.ToString("d",DateTimeFormatInfo.InvariantInfo);
+            var date = _localDate.ToString("yyyy-MM-dd");
 
             return date;
         }
